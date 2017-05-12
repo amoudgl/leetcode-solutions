@@ -1,3 +1,4 @@
+// Author: Abhinav Moudgil [ https://leetcode.com/amoudgl/ ]
 class Solution {
 public:
     bool repeatedSubstringPattern(string s) {
