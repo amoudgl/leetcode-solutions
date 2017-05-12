@@ -1,3 +1,4 @@
+// Author: Abhinav Moudgil [ https://leetcode.com/amoudgl/ ]
 class Solution {
 public:
     string getHint(string secret, string guess) {
