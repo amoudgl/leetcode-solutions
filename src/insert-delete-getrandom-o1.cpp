@@ -1,3 +1,4 @@
+// Author: Abhinav Moudgil [ https://leetcode.com/amoudgl/ ]
 class RandomizedSet {
 public:
     /** Initialize your data structure here. */
