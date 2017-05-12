@@ -1,3 +1,4 @@
+// Author: Abhinav Moudgil [ https://leetcode.com/amoudgl/ ]
 class NumArray {
 public:
     NumArray(vector<int> nums) {
