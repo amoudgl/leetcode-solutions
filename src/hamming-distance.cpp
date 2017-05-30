@@ -2,32 +2,12 @@
 class Solution {
 public:
     int hammingDistance(int x, int y) {
-        string a, b;
-        a = GetBitString(x);
-        b = GetBitString(y);
-        int distance = 0;
-        for (int i = 0; i < 32; i++)
+        int z = x ^ y, distance = 0;
+        while (z > 0)
         {
-            if (a[i] != b[i])
-                distance++;
+            distance += z % 2;
+            z = z/2;
         }
         return distance;
-    }
-    string GetBitString(int x)
-    {
-        string a = "";
-        while (x > 0)
-        {
-            int digit = x % 2;
-            x = x/2;
-            a = to_string(digit) + a;
-        }
-        string zeros;
-        for (int i = 0; i < 32 - a.length(); i++)
-        {
-            zeros += "0";
-        }
-        a = zeros + a;
-        return a;
     }
 };
