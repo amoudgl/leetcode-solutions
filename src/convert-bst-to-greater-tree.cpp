@@ -11,32 +11,27 @@
 class Solution {
 public:
     TreeNode* convertBST(TreeNode* root) {
-        int curr = 0;
-        sum = 0;
-        GetSum(root);
-        ConvertBST(root, curr);
+        int sum = CalcSum(root), prev = 0; 
+        f(root, prev, sum);
         return root;
     }
-    void GetSum(TreeNode *root)
+    int CalcSum(TreeNode *root)
     {
-        if (root != NULL)
+        if (root)
         {
-            GetSum(root->left);
-            sum += root->val;
-            GetSum(root->right);
+            return root->val + CalcSum(root->left) + CalcSum(root->right);
+        }
+        else return 0;
+    }
+    void f(TreeNode *root, int &prev, int sum)
+    {
+        if (root)
+        {
+            f(root->left, prev, sum);
+            int x = prev;
+            prev += root->val;
+            root->val = sum - x;
+            f(root->right, prev, sum);
         }
     }
-    void ConvertBST(TreeNode *root, int &curr)
-    {
-        if (root != NULL)
-        {
-            ConvertBST(root->left, curr);
-            int temp = root->val;
-            root->val = sum - curr;
-            curr += temp;
-            ConvertBST(root->right, curr);
-        }
-    }
-private:
-    int sum;
 };
